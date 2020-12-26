@@ -1,16 +1,16 @@
 import React from 'react';
-import { Box, Flex, Text, Button, Stack, Link, Image } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { AiOutlineClose, GiHamburgerMenu } from 'react-icons/all';
 import { DarkModeButton } from '../shared/DarkModeButton';
-import logo from '../../images/logo.png';
 import Logo from '../shared/Logo';
-import { PORTAL_URL } from '../util/InternalLinks';
+import { PORTAL_URL } from '../util/WebAppLinks';
+import Link from 'next/link';
 
 const MenuItems = (props) => {
-  const { children, isLast, to = '/', ...rest } = props;
+  const { children, isLast, href = '/', ...rest } = props;
   return (
     <Text mb={{ base: isLast ? 0 : 8, sm: 0 }} mr={{ base: 0, sm: isLast ? 0 : 8 }} display="block" {...rest}>
-      <Link to={to}>{children}</Link>
+      <Link href={href}>{children}</Link>
     </Text>
   );
 };
@@ -35,8 +35,8 @@ const Header = (props) => {
           justify={['center', 'space-between', 'flex-end', 'flex-end']}
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}>
-          <MenuItems to={PORTAL_URL}>Portal</MenuItems>
-          <MenuItems to={PORTAL_URL}>How It works </MenuItems>
+          <MenuItems href={PORTAL_URL}>Web App</MenuItems>
+          <MenuItems href={PORTAL_URL}>How It works </MenuItems>
           {/* <MenuItems to="/signup" isLast>
             <Button
               size="sm"

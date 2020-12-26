@@ -9,7 +9,7 @@ import PbIconButton from '../common/IconButtons';
 import { TextXs } from '../common/Texts';
 import { Card } from '../layout/Card';
 import { CenterColumnFlex } from '../layout/Flexes';
-import { USERS_URL, PERSONALBESTS_URL, PORTAL_URL, TEMPLATES_URL, WORKOUT_DIARY_URL } from '../util/InternalLinks';
+import { USERS_URL, PERSONALBESTS_URL, PORTAL_URL, TEMPLATES_URL, WORKOUT_DIARY_URL } from '../util/WebAppLinks';
 
 const LandingList = () => {
   const options = useMemo(

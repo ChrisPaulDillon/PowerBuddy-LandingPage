@@ -10,7 +10,7 @@ import axios from 'axios';
 import { RegisterUserUrl } from '../../api/account/user';
 import { useDispatch } from 'react-redux';
 import { CenterColumnFlex } from '../layout/Flexes';
-import { PORTAL_URL } from '../util/InternalLinks';
+import { PORTAL_URL } from '../util/WebAppLinks';
 
 const RegisterForm = () => {
   const { handleSubmit, errors, register, formState } = useForm();

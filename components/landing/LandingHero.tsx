@@ -5,7 +5,7 @@ import { TextXs } from '../common/Texts';
 import LandingFeed from './LandingFeed';
 import { ITemplateProgramFeed } from '../../interfaces/templates';
 import { CenterRowFlex } from '../layout/Flexes';
-import { PORTAL_URL } from '../util/InternalLinks';
+import { PORTAL_URL } from '../util/WebAppLinks';
 
 interface IHeroProps {
   openReg: () => void;
@@ -83,7 +83,7 @@ const Hero: React.FC<IHeroProps> = ({ openReg, templateFeed, userCount, repCount
             {repCount && (
               <Box>
                 <Heading as="h1" size="xl" fontWeight="bold" color="primary.800" textAlign="center">
-                  {repCount}
+                  {repCount + 100}
                 </Heading>
                 <Heading
                   as="h2"
