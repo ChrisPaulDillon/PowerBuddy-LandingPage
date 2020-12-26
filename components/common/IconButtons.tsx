@@ -2,8 +2,6 @@ import React from 'react';
 import { IconButton } from '@chakra-ui/react';
 import { PbToolTip } from './ToolTips';
 import { IconType } from 'react-icons';
-import { SizeType } from '../../types/unionTypes';
-
 interface IProps {
   label: string;
   Icon: IconType;
@@ -12,7 +10,7 @@ interface IProps {
   color?: string;
   isDisabled?: boolean;
   isLoading?: boolean;
-  size?: SizeType;
+  size?: string;
 }
 
 const PbIconButton: React.FC<IProps> = ({ label, Icon, onClick, fontSize, color, isDisabled, isLoading, size, ...rest }) => {

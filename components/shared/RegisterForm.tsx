@@ -8,14 +8,12 @@ import { AiFillStar, AiTwotoneLock, MdEmail } from 'react-icons/all';
 import { IUser } from '../../interfaces/users';
 import axios from 'axios';
 import { RegisterUserUrl } from '../../api/account/user';
-import { useDispatch } from 'react-redux';
 import { CenterColumnFlex } from '../layout/Flexes';
 import { PORTAL_URL } from '../util/WebAppLinks';
 
 const RegisterForm = () => {
   const { handleSubmit, errors, register, formState } = useForm();
   const toast = useToast();
-  const dispatcher = useDispatch();
 
   const onSubmit = async ({ username, email, password }: any) => {
     const user: IUser = {

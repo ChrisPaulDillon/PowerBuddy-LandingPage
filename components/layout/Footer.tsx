@@ -1,35 +1,7 @@
 import React from 'react';
-import { Box, Flex, useColorMode, Stack, useDisclosure, Avatar, IconButton, useToken } from '@chakra-ui/react';
-import theme from '../../theme';
-import { MdMenu } from 'react-icons/md';
-import { Banner } from '../common/Texts';
-import { useSelector } from 'react-redux';
-import { IAppState } from '../../redux/store';
-import { MobileSideNav } from './LeftNav';
-import useScreenSizes from '../../hooks/useScreenSizes';
-import RightNav from './RightMenu';
-import { PbDrawerForm } from '../common/Drawers';
-import { LoginModal } from '../shared/Modals';
-import MenuBase from '../common/Menus';
-import MCalendar from '../common/MCalendar';
-import { PbPrimaryButton } from '../common/Buttons';
+import { Box, Flex, Stack, useDisclosure, useToken } from '@chakra-ui/react';
 
 const Footer = () => {
-  const { user } = useSelector((state: IAppState) => state.state);
-  const { colorMode } = useColorMode();
-  const { SCREEN_MOBILE, SCREEN_DESKTOP } = useScreenSizes();
-  const { isAuthenticated } = useSelector((state: IAppState) => state.state);
-
-  const { isOpen: isLeftNavOpen, onOpen: onLeftNavOpen, onClose: onLeftNavClose } = useDisclosure();
-  const { isOpen: isMobileOpen, onOpen: onMobileOpen, onClose: onMobileClose } = useDisclosure();
-  const { isOpen: isLoginOpen, onOpen: onLoginOpen, onClose: onLoginClose } = useDisclosure();
-
-  const [purple100, gray800] = useToken('colors', ['blue.800', 'gray.400']);
-
-  const handleBurgerMenuPress = () => {
-    onLeftNavOpen();
-  };
-
   return (
     <Flex
       as="nav"
