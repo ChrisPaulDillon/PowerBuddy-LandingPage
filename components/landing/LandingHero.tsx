@@ -80,7 +80,7 @@ const Hero: React.FC<IHeroProps> = ({ openReg, templateFeed, userCount, repCount
           </Flex>
 
           <Flex flexDir="column" p={4}>
-            {repCount && (
+            {repCount && repCount !== 0 && (
               <Box>
                 <Heading as="h1" size="xl" fontWeight="bold" color="primary.800" textAlign="center">
                   {repCount + 100}
@@ -105,14 +105,6 @@ const Hero: React.FC<IHeroProps> = ({ openReg, templateFeed, userCount, repCount
       </Box>
     </Flex>
   );
-};
-
-Hero.propTypes = {
-  image: PropTypes.string,
-};
-
-Hero.defaultProps = {
-  image: 'https://source.unsplash.com/collection/404339/800x600',
 };
 
 export default Hero;

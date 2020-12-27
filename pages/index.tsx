@@ -7,6 +7,7 @@ import { ModalDrawerForm } from '../components/common/ModalDrawer';
 import Header from '../components/landing/LandingHeader';
 import Hero from '../components/landing/LandingHero';
 import LandingList from '../components/landing/LandingList';
+import { PageHeader } from '../components/layout/Page';
 import RegisterForm from '../components/shared/RegisterForm';
 import { useAxios } from '../hooks/useAxios';
 import { ITemplateProgramFeed } from '../interfaces/templates';
@@ -23,7 +24,7 @@ export default function Home() {
 
   return (
     <Flex direction="column" align="center" m="0 auto" px={10} maxW={{ xl: '1300px' }} >
-      <Head> <link href="/static/slick.css" rel="stylesheet" /></Head>
+      <PageHeader title="The All In One Weightlifting Solution" />
       <Header />
       <Box>
         <Hero openReg={openReg} templateFeed={feedData!} userCount={metrics?.userCount!} repCount={metrics?.setCount!} />

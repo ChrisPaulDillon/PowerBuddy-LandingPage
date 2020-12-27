@@ -1,5 +1,6 @@
 import { ChakraProvider, extendTheme, theme } from '@chakra-ui/react';
 import React from 'react';
+import '../public/static/slick.css'
 
 const config = {
   useSystemColorMode: true,
