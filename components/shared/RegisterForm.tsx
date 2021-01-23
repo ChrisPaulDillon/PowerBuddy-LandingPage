@@ -23,8 +23,8 @@ const RegisterForm = () => {
     };
     try {
       const response = await axios.post(RegisterUserUrl(), user);
-      localStorage.setItem('token', response.data.token);
-
+      localStorage.setItem('accessToken', response.data.accessToken);
+      localStorage.setItem('refreshToken', response.data.refreshToken);
       toast({
         title: 'Success',
         description: 'Successfully Signed Up',

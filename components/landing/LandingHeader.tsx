@@ -36,7 +36,7 @@ const Header = (props) => {
           direction={['column', 'row', 'row', 'row']}
           pt={[4, 4, 0, 0]}>
           <MenuItems href={PORTAL_URL}>Web App</MenuItems>
-          <MenuItems href={PORTAL_URL}>How It works </MenuItems>
+          {/* <MenuItems href={PORTAL_URL}>How It works </MenuItems> */}
           {/* <MenuItems to="/signup" isLast>
             <Button
               size="sm"
