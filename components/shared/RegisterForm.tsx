@@ -7,7 +7,7 @@ import { validateEmailInput, validateInput, validatePassword } from '../../util/
 import { AiFillStar, AiTwotoneLock, MdEmail } from 'react-icons/all';
 import { IUser } from '../../interfaces/users';
 import axios from 'axios';
-import { RegisterUserUrl } from '../../api/account/user';
+import { RegisterUserUrl } from '../../api/account/auth';
 import { CenterColumnFlex } from '../layout/Flexes';
 import { PORTAL_URL } from '../util/WebAppLinks';
 
