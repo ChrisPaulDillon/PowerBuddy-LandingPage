@@ -1,5 +1,7 @@
 import { Box, Flex, useDisclosure } from '@chakra-ui/react';
-import Head from 'next/head'
+import axios from 'axios';
+import { GetStaticProps } from 'next';
+import { ITemplateProgramFeed } from 'powerbuddy-shared/lib';
 import React from 'react';
 import { GetLandingPageMetrics } from '../api/public/metrics';
 import { GetTemplateFeedUrl } from '../api/public/template';
@@ -9,17 +11,13 @@ import Hero from '../components/landing/LandingHero';
 import LandingList from '../components/landing/LandingList';
 import { PageHeader } from '../components/layout/Page';
 import RegisterForm from '../components/shared/RegisterForm';
-import { useAxios } from '../hooks/useAxios';
-import { ITemplateProgramFeed } from '../interfaces/templates';
 
 interface ILandingPageMetrics {
   setCount: number;
   userCount: number;
 }
 
-export default function Home() {
-  const { data: feedData } = useAxios<ITemplateProgramFeed[]>(GetTemplateFeedUrl());
-  const { data: metrics } = useAxios<ILandingPageMetrics>(GetLandingPageMetrics());
+export default function Home({feedData, metrics}: any) {
   const { isOpen: isRegOpen, onOpen: openReg, onClose: onRegClose } = useDisclosure();
 
   return (
@@ -38,3 +36,14 @@ export default function Home() {
       </Box>
     </Flex>)
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const templateResponse = await axios.get<ITemplateProgramFeed[]>(GetTemplateFeedUrl());
+  const metricsResponse = await axios.get<ILandingPageMetrics>(GetLandingPageMetrics());
+  return {
+    props: {
+      feedData: templateResponse.data,
+      metrics: metricsResponse.data
+    },
+  };
+};

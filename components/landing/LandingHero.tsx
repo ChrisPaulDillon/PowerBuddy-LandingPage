@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Box, Button, Flex, Heading, Stack, Text, Link, LightMode } from '@chakra-ui/react';
 import { TextXs } from '../common/Texts';
 import LandingFeed from './LandingFeed';
-import { ITemplateProgramFeed } from '../../interfaces/templates';
 import { CenterRowFlex } from '../layout/Flexes';
 import { PORTAL_URL } from '../util/WebAppLinks';
+import { ITemplateProgramFeed } from 'powerbuddy-shared/lib';
 
 interface IHeroProps {
   openReg: () => void;
