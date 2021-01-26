@@ -1,11 +1,11 @@
 import React from 'react';
 import '@brainhubeu/react-carousel/lib/style.css';
 import Slider from 'react-slick';
-import { ITemplateProgramFeed } from '../../interfaces/templates';
 import { TextSm } from '../common/Texts';
 import { Card } from '../layout/Card';
 import { TEMPLATES_URL } from '../util/WebAppLinks';
 import { Box, Link } from '@chakra-ui/react';
+import { ITemplateProgramFeed } from 'powerbuddy-shared/lib';
 
 interface ILandingFeedProps {
   templateFeed: ITemplateProgramFeed[];

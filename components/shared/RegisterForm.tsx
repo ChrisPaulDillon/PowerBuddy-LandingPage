@@ -5,11 +5,11 @@ import { useForm } from 'react-hook-form';
 import { FormErrorMessage, FormControl, Input, Button, Icon } from '@chakra-ui/react';
 import { validateEmailInput, validateInput, validatePassword } from '../../util/formInputs';
 import { AiFillStar, AiTwotoneLock, MdEmail } from 'react-icons/all';
-import { IUser } from '../../interfaces/users';
 import axios from 'axios';
 import { RegisterUserUrl } from '../../api/account/auth';
 import { CenterColumnFlex } from '../layout/Flexes';
 import { PORTAL_URL } from '../util/WebAppLinks';
+import { IUser } from 'powerbuddy-shared/lib';
 
 const RegisterForm = () => {
   const { handleSubmit, errors, register, formState } = useForm();
